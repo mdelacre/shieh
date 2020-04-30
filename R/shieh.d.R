@@ -150,7 +150,6 @@ shieh.dEst <- function(x,
     list(statistic = shieh_d,
          parameter = c(n1,n2),
          estimate = c(m1,m2,s1,s2),
-         #conf.level= conf.level,
          conf.int = result)
   )
 
@@ -163,7 +162,6 @@ shieh.d.default <- function(x, y,conf.level=.95,alternative="two.sided", na.rm=T
   out$statistic <- out$statistic
   out$parameter <- out$parameter
   out$estimate <- out$estimate
-  out$conf.level <- out$conf.level
   out$conf.int <- out$conf.int
   out$call <- match.call()
 
