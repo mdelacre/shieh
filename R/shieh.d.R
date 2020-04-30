@@ -150,6 +150,7 @@ shieh.dEst <- function(x,
     list(statistic = shieh_d,
          parameter = c(n1,n2),
          estimate = c(m1,m2,s1,s2),
+         conf.level = conf.level,
          conf.int = result)
   )
 
@@ -162,6 +163,7 @@ shieh.d.default <- function(x, y,conf.level=.95,alternative="two.sided", na.rm=T
   out$statistic <- out$statistic
   out$parameter <- out$parameter
   out$estimate <- out$estimate
+  out$conf.level <- out$conf.level
   out$conf.int <- out$conf.int
   out$call <- match.call()
 
@@ -175,25 +177,18 @@ print.shieh.d <- function(x,...){
   cat("Call:\n")
   print(x$call)
 
-  cat("\n Shieh's d :\n")
-  print(round(x$statistic,3))
+  cat("\nShieh's d :\n")
+  cat(round(x$statistic,3),"\n\n")
 
-  cat("\n",paste0(x$conf.level*100," percent confidence interval:"),"\n")
-  print(round(x$conf.int,3))
+  cat(x$conf.level*100,"percent confidence interval:","\n")
+  print(data.frame("lower lim"=x$conf.int[1],"upper lim"=x$conf.int[2],row.names=""))
 
-  cat("\n Sample size :\n")
-  cat("      n1","n2","\n")
-  print(x$parameter)
+  cat("\nSample sizes :\n")
+  print(data.frame(x=x$parameter[1],y=x$parameter[2],row.names=""))
 
-  cat("\n Sample estimates :\n")
-  cat(c("    mean of x","mean of y","\n"))
-  print(x$estimate[1:2])
-  cat(c("     sd of x","sd of y","\n"))
-  print(x$estimate[3:4])
-
+  cat("\nSample estimates :\n")
+  print(data.frame("mean.x"=x$estimate[1],"mean.y"=x$estimate[3]),row.names="")
+  print(data.frame("sd.x"=x$estimate[2],"sd.y"=x$estimate[4]),row.names="")
 
 }
-
-
-
 
