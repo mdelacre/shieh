@@ -15,7 +15,7 @@
 #' @examples
 #' #### Run Shieh.d
 #' {# The default is to use a 95% confidence interval around point estimate
-#' x <- c(1,4,3,5)
+#' x <- c(1,4,3,4)
 #' y <- c(1,9,4,5,0,2)
 #' res <- shieh.d(x,y)
 #' res
