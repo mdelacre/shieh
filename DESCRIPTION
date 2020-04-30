@@ -1,0 +1,25 @@
+Package: Shieh
+Title: Effet size Estimator for Comparison of Two Group Means
+Version: 0.0.0.3
+Authors@R: c(
+    person(given = "Marie",
+           family = "Delacre",
+           role = c("aut", "cre"),
+           email = "marie.delacre@ulb.ac.be"))
+Description: The package is dedicated at:
+              (a) computing Shieh's d and transformed Shieh's d measure; 
+              (b) computing their respective confidence intervals;
+              (c) performing power analysis for Welch's t-test.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Depends: R (>= 2.10)
+BugReports: https://github.com/mdelacre/Reffectsize/issues
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+Imports: 
+   stats,
+   base
